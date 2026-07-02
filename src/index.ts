@@ -1,9 +1,11 @@
+import cors from "cors";
 import express from "express";
 import { geoRouter } from "./routes/geo.routes";
- 
+
 const app = express();
 const PORTA = process.env.PORT ? Number(process.env.PORT) : 3334;
- 
+
+app.use(cors());
 app.use(express.json());
 app.use(geoRouter);
  
